@@ -1,16 +1,172 @@
 /*
 Theme Name: school-theme
 Theme URI: 
-Author: krishiv, Ry, Hugo
+Author: Krishiv, Ry, Hugo
 Author URI: 
 Description: Custom block theme for the school website project
 Requires at least: 6.9
 Tested up to: 6.9
 Requires PHP: 5.7
-Version: 
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: school-theme
-Tags: 
+Tags: education, custom, block-theme
 */
 
+/* =========== Global Styles =========== */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* =========== Header =========== */
+header.wp-block-group {
+    background-color: #004080;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .wp-block-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .wp-block-navigation__container {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header .wp-block-navigation-item a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+header .wp-block-navigation-item a:hover {
+    background-color: #0066cc;
+}
+
+/* =========== Footer =========== */
+footer.wp-block-group {
+    background-color: #00264d;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+footer .wp-block-navigation__container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer .wp-block-navigation-item a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+footer .wp-block-navigation-item a:hover {
+    color: #e6f0ff;
+}
+
+/* =========== Main Content =========== */
+main.wp-block-group {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Post content fixes */
+.wp-block-post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.wp-block-group[style*="font-size"] {
+    font-size: 14px;
+}
+
+/* =========== Hero Section =========== */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #e6f0ff;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+/* Video Section */
+.video {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========== Spacer Fixes =========== */
+.wp-block-spacer {
+    clear: both;
+    display: block;
+}
+
+/* =========== Responsive =========== */
+@media (max-width: 768px) {
+    header.wp-block-group, footer.wp-block-group {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    header .wp-block-navigation__container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    footer .wp-block-navigation__container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
