@@ -1,87 +1,94 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- Hero Section -->
-<!-- wp:group {"className":"hero","layout":{"type":"constrained"}} -->
-<div class="wp-block-group hero">
-    <!-- wp:heading {"level":1,"className":"hero-title"} -->
-    <h1 class="hero-title">Welcome to Our School</h1>
-    <!-- /wp:heading -->
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
 
-    <!-- wp:paragraph {"className":"hero-subtitle"} -->
-    <p class="hero-subtitle">Empowering students to achieve their dreams</p>
-    <!-- /wp:paragraph -->
+  <!-- Hero Section -->
+  <!-- wp:cover {"url":"placeholder-hero.jpg","dimRatio":50,"minHeight":400,"contentPosition":"center center"} -->
+  <div class="wp-block-cover" style="min-height:400px">
+    <span aria-hidden="true" class="wp-block-cover__background has-background-dim-50"></span>
+    <div class="wp-block-cover__inner-container">
+      <!-- wp:heading {"textAlign":"center","level":1} -->
+      <h1 class="has-text-align-center">Welcome to Our School</h1>
+      <!-- /wp:heading -->
 
-    <!-- wp:buttons -->
-    <div class="wp-block-buttons">
-        <!-- wp:button {"backgroundColor":"primary","textColor":"neutral"} -->
-        <div class="wp-block-button"><a class="wp-block-button__link has-neutral-color has-primary-background-color">Apply Now</a></div>
-        <!-- /wp:button -->
+      <!-- wp:paragraph {"align":"center"} -->
+      <p class="has-text-align-center">Empowering students with knowledge, creativity, and leadership skills.</p>
+      <!-- /wp:paragraph -->
+
+      <!-- wp:button {"align":"center"} -->
+      <div class="wp-block-button aligncenter"><a class="wp-block-button__link" href="/apply">Apply Now</a></div>
+      <!-- /wp:button -->
     </div>
-    <!-- /wp:buttons -->
-</div>
-<!-- /wp:group -->
+  </div>
+  <!-- /wp:cover -->
 
-<!-- Text + Image Section -->
-<!-- wp:group {"className":"text-section","layout":{"type":"constrained"}} -->
-<div class="wp-block-group text-section">
+  <!-- Text + Image Section -->
+  <!-- wp:group {"style":{"spacing":{"padding":{"top":"50px","bottom":"50px"}}}} -->
+  <div class="wp-block-group" style="padding-top:50px;padding-bottom:50px">
     <!-- wp:columns -->
     <div class="wp-block-columns">
-        <!-- wp:column -->
-        <div class="wp-block-column">
-            <!-- wp:heading {"level":2} -->
-            <h2>About Our School</h2>
-            <!-- /wp:heading -->
-            <!-- wp:paragraph -->
-            <p>Our school offers top-quality education, a supportive environment, and opportunities for all students to excel academically and creatively.</p>
-            <!-- /wp:paragraph -->
-        </div>
-        <!-- /wp:column -->
+      <!-- wp:column -->
+      <div class="wp-block-column">
+        <!-- wp:heading -->
+        <h2>About Our School</h2>
+        <!-- /wp:heading -->
 
-        <!-- wp:column -->
-        <div class="wp-block-column">
-            <!-- wp:image {"id":123,"sizeSlug":"large","linkDestination":"none"} -->
-            <figure class="wp-block-image size-large"><img src="https://via.placeholder.com/400x300" alt="School Image"/></figure>
-            <!-- /wp:image -->
-        </div>
-        <!-- /wp:column -->
+        <!-- wp:paragraph -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in posuere quam. Aliquam convallis dictum ex.</p>
+        <!-- /wp:paragraph -->
+
+        <!-- wp:paragraph -->
+        <p>Vivamus at enim scelerisque, facilisis est eget, tristique purus. Fusce at tristique diam, at pharetra urna.</p>
+        <!-- /wp:paragraph -->
+      </div>
+      <!-- /wp:column -->
+
+      <!-- wp:column -->
+      <div class="wp-block-column">
+        <!-- wp:image {"id":123,"sizeSlug":"large"} -->
+        <figure class="wp-block-image size-large"><img src="placeholder-about.jpg" alt="Students learning"></figure>
+        <!-- /wp:image -->
+      </div>
+      <!-- /wp:column -->
     </div>
     <!-- /wp:columns -->
-</div>
-<!-- /wp:group -->
+  </div>
+  <!-- /wp:group -->
 
-<!-- Video Section -->
-<!-- wp:group {"className":"video-section","layout":{"type":"constrained"}} -->
-<div class="wp-block-group video-section">
-    <!-- wp:heading {"level":2} -->
-    <h2>Watch Our School in Action</h2>
+  <!-- Video Section -->
+  <!-- wp:group {"style":{"spacing":{"padding":{"top":"50px","bottom":"50px"}}}} -->
+  <div class="wp-block-group" style="padding-top:50px;padding-bottom:50px">
+    <!-- wp:heading {"textAlign":"center"} -->
+    <h2 class="has-text-align-center">School Introduction Video</h2>
     <!-- /wp:heading -->
 
-    <!-- wp:video -->
-    <figure class="wp-block-video"><video controls>
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video></figure>
+    <!-- wp:video {"align":"center"} -->
+    <figure class="wp-block-video aligncenter"><video controls src="placeholder-video.mp4"></video></figure>
     <!-- /wp:video -->
-</div>
-<!-- /wp:group -->
+  </div>
+  <!-- /wp:group -->
 
-<!-- Gallery Section -->
-<!-- wp:group {"className":"gallery-section","layout":{"type":"constrained"}} -->
-<div class="wp-block-group gallery-section">
-    <!-- wp:heading {"level":2} -->
-    <h2>Gallery</h2>
+  <!-- Gallery Section -->
+  <!-- wp:group {"style":{"spacing":{"padding":{"top":"50px","bottom":"50px"}}}} -->
+  <div class="wp-block-group" style="padding-top:50px;padding-bottom:50px">
+    <!-- wp:heading {"textAlign":"center"} -->
+    <h2 class="has-text-align-center">Gallery</h2>
     <!-- /wp:heading -->
 
-    <!-- wp:gallery {"columns":3,"linkTo":"media"} -->
+    <!-- wp:gallery {"linkTo":"none","columns":3,"sizeSlug":"medium"} -->
     <figure class="wp-block-gallery columns-3 is-cropped">
-        <ul class="blocks-gallery-grid">
-            <li class="blocks-gallery-item"><figure><img src="https://via.placeholder.com/300x200" alt="Gallery 1"/></figure></li>
-            <li class="blocks-gallery-item"><figure><img src="https://via.placeholder.com/300x200" alt="Gallery 2"/></figure></li>
-            <li class="blocks-gallery-item"><figure><img src="https://via.placeholder.com/300x200" alt="Gallery 3"/></figure></li>
-        </ul>
+      <ul class="blocks-gallery-grid">
+        <li class="blocks-gallery-item"><figure><img src="placeholder-gallery1.jpg" alt="Gallery Image 1"/></figure></li>
+        <li class="blocks-gallery-item"><figure><img src="placeholder-gallery2.jpg" alt="Gallery Image 2"/></figure></li>
+        <li class="blocks-gallery-item"><figure><img src="placeholder-gallery3.jpg" alt="Gallery Image 3"/></figure></li>
+      </ul>
     </figure>
     <!-- /wp:gallery -->
-</div>
+  </div>
+  <!-- /wp:group -->
+
+</main>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
