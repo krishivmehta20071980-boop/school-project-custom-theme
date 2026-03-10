@@ -1,16 +1,21 @@
-document.addEventListener("scroll", function () {
-
+document.addEventListener("DOMContentLoaded", function () {
   const elements = document.querySelectorAll(".fade-in");
 
-  elements.forEach(function(el) {
+  function handleScroll() {
+    elements.forEach(function(el) {
+      const position = el.getBoundingClientRect().top;
+      const screenPosition = window.innerHeight * 0.85;
 
-    const position = el.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight * 0.85;
+      if (position < screenPosition && position > 0) {
+        el.classList.add("show");
+      } else {
+        el.classList.remove("show");
+      }
+    });
+  }
 
-    if (position < screenPosition) {
-      el.classList.add("show");
-    }
+  window.addEventListener("scroll", handleScroll);
 
-  });
-
+  // Run on page load in case elements are already in view
+  handleScroll();
 });
