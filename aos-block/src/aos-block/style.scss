@@ -1,14 +1,10 @@
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
-
 .wp-block-school-blocks-aos-block {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+    border-left: 5px solid #004080;
+    background-color: #f8faff; 
+    padding: 2rem;
+    margin: 1.5rem 0;
+    color: #333;
+    border-radius: 4px;
 }
 
 @import "../../node_modules/aos/dist/aos.css";

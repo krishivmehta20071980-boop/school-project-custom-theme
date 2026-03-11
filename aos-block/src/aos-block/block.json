@@ -1,25 +1,25 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
-	"name": "school-blocks/aos-block",
-	"version": "0.1.0",
-	"title": "Aos Block",
-	"category": "widgets",
-	"attributes": {
-    "animationType": {
-        "type": "string",
-        "default": "fade-up"
-    }
-	},
-	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
-	"example": {},
-	"supports": {
-		"html": false
-	},
-	"textdomain": "aos-block",
-	"editorScript": "file:./index.js",
-	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css",
-	"viewScript": "file:./view.js"
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "school-blocks/aos-block",
+    "version": "0.1.0",
+    "title": "Aos Block",
+    "category": "widgets",
+    "attributes": {
+        "animationType": {
+            "type": "string",
+            "default": "fade-up"
+        }
+    },
+    "icon": "smiley",
+    "description": "Example block scaffolded with Create Block tool.",
+    "example": {},
+    "supports": {
+        "html": false
+    },
+    "textdomain": "aos-block",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css",
+    "viewScript": "file:./view.js"
 }

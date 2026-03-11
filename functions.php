@@ -22,6 +22,15 @@ function school_theme_scripts() {
         array(),
         wp_get_theme()->get('Version')
     );
+
+    // Enqueue AOS CSS (The animations)
+    wp_enqueue_style('aos-css', 'https://unpkg.com/aos@2.3.1/dist/aos.css');
+
+    // Enqueue AOS JS (The logic)
+    wp_enqueue_script('aos-js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), false, true);
+
+    // Initialize AOS (The "start" button)
+    wp_add_inline_script('aos-js', 'AOS.init();');
 }
 
 add_action('wp_enqueue_scripts', 'school_theme_scripts');
@@ -107,7 +116,8 @@ add_action( 'init', 'school_register_staff_taxonomy' );
  * 6. AOS Animation Block
  */
 add_action( 'init', function() {
-    $path = __DIR__ . '/aos-block/src/aos-block'; 
+    // Based on your terminal: aos-block -> build -> aos-block
+    $path = __DIR__ . '/aos-block/build/aos-block';
 
     if ( file_exists( $path . '/block.json' ) ) {
         register_block_type( $path );

@@ -1,11 +1,14 @@
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
-export default function save( { attributes } ) {
-    const { animationType } = attributes;
+export default function save({ attributes }) {
+    const blockProps = useBlockProps.save({
+        'data-aos': attributes.animationType,
+        'className': 'aos-wrapper'
+    });
 
     return (
-        <div { ...useBlockProps.save({ 'data-aos': animationType }) }>
-            <p>This content is now wrapped in an AOS animation!</p>
+        <div { ...blockProps }>
+            <InnerBlocks.Content />
         </div>
     );
 }
