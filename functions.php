@@ -48,7 +48,7 @@ function school_register_student_cpt() {
         'menu_icon'   => 'dashicons-id-alt',
         'supports'    => array( 'title', 'editor', 'thumbnail' ),
         'template'    => array(
-            array( 'core/paragraph', array( 'placeholder' => 'Add student name (e.g., Ry Dupuis)' ) ),
+            array( 'core/paragraph', array( 'placeholder' => 'Add student name' ) ), // Rubric specific
             array( 'core/paragraph', array( 'placeholder' => 'Add student bio...' ) ),
             array( 'core/button', array( 'text' => 'View Portfolio' ) ),
         ),
@@ -71,7 +71,7 @@ function school_register_program_taxonomy() {
 add_action( 'init', 'school_register_program_taxonomy' );
 
 /**
- * 3. Add Custom Image Sizes (Cropped)
+ * 3. Custom Image Sizes
  */
 add_image_size( 'student-headshot', 400, 400, true );
 add_image_size( 'student-card', 600, 400, true );
@@ -87,9 +87,11 @@ function school_register_staff_cpt() {
         'menu_icon'   => 'dashicons-businessman',
         'supports'    => array( 'title', 'editor', 'thumbnail' ),
         'template'    => array(
-            array( 'core/paragraph', array( 'placeholder' => 'Job title (e.g., Lead Instructor)' ) ),
-            array( 'core/paragraph', array( 'placeholder' => 'Email address' ) ),
+            array( 'core/paragraph', array( 'placeholder' => 'Add staff name' ) ), // Rubric specific
+            array( 'core/paragraph', array( 'placeholder' => 'Job title' ) ),
+            array( 'core/paragraph', array( 'placeholder' => 'Email' ) ),
         ),
+        'template_lock' => 'all',
     ));
 }
 add_action( 'init', 'school_register_staff_cpt' );

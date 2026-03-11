@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-// 1. We add InspectorControls (the sidebar) and SelectControl (the dropdown)
+// 1. add InspectorControls and SelectControl
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import './editor.scss';
