@@ -25,4 +25,91 @@ function school_theme_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'school_theme_scripts');
-?>
+
+
+/**
+ * 1. Register Custom Post Type: Students
+ */
+function school_register_student_cpt() {
+    $args = array(
+        'labels'      => array( 'name' => 'Students', 'singular_name' => 'Student' ),
+        'public'      => true,
+        'has_archive' => true,
+        'show_in_rest'=> true,
+        'menu_icon'   => 'dashicons-id-alt',
+        'supports'    => array( 'title', 'editor', 'thumbnail' ),
+        'template'    => array(
+            array( 'core/paragraph', array( 'placeholder' => 'Add student name (e.g., Ry Dupuis)' ) ),
+            array( 'core/paragraph', array( 'placeholder' => 'Add student bio...' ) ),
+            array( 'core/button', array( 'text' => 'View Portfolio' ) ),
+        ),
+        'template_lock' => 'all',
+    );
+    register_post_type( 'student', $args );
+}
+add_action( 'init', 'school_register_student_cpt' );
+
+/**
+ * 2. Register Taxonomy: Program (for Students)
+ */
+function school_register_program_taxonomy() {
+    register_taxonomy( 'program', 'student', array(
+        'labels'       => array( 'name' => 'Programs', 'singular_name' => 'Program' ),
+        'hierarchical' => true, // Allows for "Parent/Child" relationship like categories
+        'show_in_rest' => true,
+    ));
+}
+add_action( 'init', 'school_register_program_taxonomy' );
+
+/**
+ * 3. Add Custom Image Sizes (Cropped)
+ */
+add_image_size( 'student-headshot', 400, 400, true );
+add_image_size( 'student-card', 600, 400, true );
+
+/**
+ * 4. Register Custom Post Type: Staff
+ */
+function school_register_staff_cpt() {
+    register_post_type( 'staff', array(
+        'labels'      => array( 'name' => 'Staff', 'singular_name' => 'Staff Member' ),
+        'public'      => true,
+        'show_in_rest'=> true,
+        'menu_icon'   => 'dashicons-businessman',
+        'supports'    => array( 'title', 'editor', 'thumbnail' ),
+        'template'    => array(
+            array( 'core/paragraph', array( 'placeholder' => 'Job title (e.g., Lead Instructor)' ) ),
+            array( 'core/paragraph', array( 'placeholder' => 'Email address' ) ),
+        ),
+    ));
+}
+add_action( 'init', 'school_register_staff_cpt' );
+
+/**
+ * 5. Staff Taxonomy with Restricted Capabilities
+ */
+function school_register_staff_taxonomy() {
+    register_taxonomy( 'staff_dept', 'staff', array(
+        'labels' => array( 'name' => 'Departments' ),
+        'hierarchical' => true,
+        'show_in_rest' => true,
+        'capabilities' => array(
+            'manage_terms' => 'administrator', // Only Admin can add/delete terms
+            'edit_terms'   => 'administrator',
+            'delete_terms' => 'administrator',
+            'assign_terms' => 'edit_posts',    // Staff can only assign them to posts
+        ),
+    ));
+}
+add_action( 'init', 'school_register_staff_taxonomy' );
+
+/**
+ * 6. AOS Animation Block
+ */
+add_action( 'init', function() {
+    $path = __DIR__ . '/aos-block/src/aos-block'; 
+
+    if ( file_exists( $path . '/block.json' ) ) {
+        register_block_type( $path );
+    }
+} );
