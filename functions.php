@@ -125,3 +125,18 @@ add_action( 'init', function() {
         register_block_type( $path );
     }
 } );
+// Automatically add zigzag-item class to all columns blocks
+function schooltheme_add_zigzag_class($block_content, $block) {
+    if ($block['blockName'] === 'core/columns') {
+        $block_content = str_replace('wp-block-columns', 'wp-block-columns zigzag-item', $block_content);
+    }
+    return $block_content;
+}
+add_filter('render_block', 'schooltheme_add_zigzag_class', 10, 2);
+function school_theme_custom_styles() {
+    // Only enqueue on front page
+    if ( is_front_page() ) {
+        wp_enqueue_style( 'school-frontpage-css', get_stylesheet_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version') );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'school_theme_custom_styles' );

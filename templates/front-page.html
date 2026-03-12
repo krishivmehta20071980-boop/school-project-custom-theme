@@ -23,39 +23,94 @@
   </div>
   <!-- /wp:cover -->
 
-  <!-- Text + Image Section -->
-  <!-- wp:group {"style":{"spacing":{"padding":{"top":"50px","bottom":"50px"}}}} -->
-  <div class="wp-block-group" style="padding-top:50px;padding-bottom:50px">
-    <!-- wp:columns -->
-    <div class="wp-block-columns">
-      <!-- wp:column -->
-      <div class="wp-block-column">
-        <!-- wp:heading -->
-        <h2>About Our School</h2>
-        <!-- /wp:heading -->
+  <!-- wp:group {"className":"card-section"} -->
+<div class="wp-block-group card-section">
 
-        <!-- wp:paragraph -->
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in posuere quam. Aliquam convallis dictum ex.</p>
-        <!-- /wp:paragraph -->
-
-        <!-- wp:paragraph -->
-        <p>Vivamus at enim scelerisque, facilisis est eget, tristique purus. Fusce at tristique diam, at pharetra urna.</p>
-        <!-- /wp:paragraph -->
+  <!-- Row of cards -->
+  <div class="card-grid">
+    <!-- Card 1 -->
+    <div class="card">
+      <img src="placeholder-about.jpg" alt="Students learning">
+      <div class="card-content">
+        <h3>About Our School</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
-      <!-- /wp:column -->
+    </div>
 
-      <!-- wp:column -->
-      <div class="wp-block-column">
-        <!-- wp:image {"id":123,"sizeSlug":"large"} -->
-        <figure class="wp-block-image size-large"><img src="placeholder-about.jpg" alt="Students learning"></figure>
-        <!-- /wp:image -->
+    <!-- Card 2 -->
+    <div class="card">
+      <img src="placeholder-about2.jpg" alt="Our Mission">
+      <div class="card-content">
+        <h3>Our Mission</h3>
+        <p>Vivamus at enim scelerisque, facilisis est eget, tristique purus.</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <img src="placeholder-about3.jpg" alt="Programs">
+      <div class="card-content">
+        <h3>Programs</h3>
+        <p>Fusce at tristique diam, at pharetra urna.</p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <img src="placeholder-about4.jpg" alt="Facilities">
+      <div class="card-content">
+        <h3>Facilities</h3>
+        <p>Aliquam convallis dictum ex, vitae facilisis erat.</p>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+      <img src="placeholder-about5.jpg" alt="Staff">
+      <div class="card-content">
+        <h3>Staff</h3>
+        <p>Proin in posuere quam, eget ultrices neque.</p>
       </div>
       <!-- /wp:column -->
     </div>
-    <!-- /wp:columns -->
-  </div>
-  <!-- /wp:group -->
 
+    <!-- Card 6 -->
+    <div class="card">
+      <img src="placeholder-about6.jpg" alt="Events">
+      <div class="card-content">
+        <h3>Events</h3>
+        <p>Nulla facilisi. Fusce dignissim velit nec justo.</p>
+      </div>
+   
+   
+    </div> <!-- end card-grid -->
+</div> <!-- end card-section -->
+<!-- Latest News Section -->
+<div class="wp-block-group latest-news-section">
+  <h2 class="has-text-align-center">Latest News</h2>
+
+  <div class="latest-news-grid">
+    <div class="news-item">
+      <img src="placeholder-news1.jpg" alt="Team Meeting">
+      <h3>A Team Meeting</h3>
+      <p>11 March 2026</p>
+    </div>
+
+    <div class="news-item">
+      <img src="placeholder-news2.jpg" alt="Announcements">
+      <h3>Announcements</h3>
+      <p>11 March 2026</p>
+    </div>
+
+    <div class="news-item">
+      <img src="placeholder-news3.jpg" alt="Student Spotlight">
+      <h3>Student Spotlight</h3>
+    </div>
+  </div>
+</div>
+  
+</div>
+<!-- /wp:group -->
   <!-- Video Section -->
   <!-- wp:group {"style":{"spacing":{"padding":{"top":"50px","bottom":"50px"}}}} -->
   <div class="wp-block-group" style="padding-top:50px;padding-bottom:50px">
@@ -89,6 +144,8 @@
   <!-- /wp:group -->
 
 </main>
+
+
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
