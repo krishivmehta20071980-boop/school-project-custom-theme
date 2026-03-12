@@ -318,3 +318,21 @@ main.wp-block-group {
   color: #555;
   font-size: 0.9rem;
 }
+.wp-block-gallery ul.blocks-gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.wp-block-gallery li.blocks-gallery-item {
+    flex: 1 1 calc(33.333% - 15px);
+    list-style: none;
+}
+
+.wp-block-gallery li.blocks-gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+}

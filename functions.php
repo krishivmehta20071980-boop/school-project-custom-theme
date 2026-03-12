@@ -140,3 +140,17 @@ function school_theme_custom_styles() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'school_theme_custom_styles' );
+function enqueue_lightgallery_assets() {
+    if ( is_front_page() ) {
+        $theme_dir = get_template_directory_uri() . '/assets/lightgallery/';
+        
+        // CSS
+        wp_enqueue_style( 'lightgallery-css', $theme_dir . 'lightgallery.css', array(), '2.9.0' );
+        
+        // JS
+        wp_enqueue_script( 'lightgallery-js', $theme_dir . 'lightgallery.min.js', array(), '2.9.0', true );
+        wp_enqueue_script( 'lg-zoom', $theme_dir . 'lg-zoom.min.js', array('lightgallery-js'), '2.9.0', true );
+        wp_enqueue_script( 'lightgallery-init', $theme_dir . 'lightgallery-init.js', array('lightgallery-js', 'lg-zoom'), '1.0', true );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_lightgallery_assets' );
